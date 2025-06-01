@@ -1,0 +1,63 @@
+/*la mise en forme du body*/
+body{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-image: url("p.png");
+    background-size: 100%;
+}
+/*le mise en forme pour le titre de la premiere page*/
+h1{
+    text-align: left;
+    font-size: xx-large;
+    font-style: italic;
+}
+h2{
+    text-align: center;
+    font-size: x-large;
+}
+/*la mise en forme du formulaire*/
+form{
+    border: 2px solid;
+    background-color: transparent;
+    backdrop-filter: blur(5px);
+    border-radius: 100px;/*Pour courber les coins su formulaire*/
+    padding: 25px;/*la taille du truc bleu*/
+    width: 400px;/*la taille du text*/
+
+}
+main{
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+}
+/*le mise en forme les inputs*/
+input[type="text"], input[type="email"], input[type="password"], ::placeholder{
+    width: 90%; /*la taille du Texte*/
+    padding: 10px;/*la taille du truc blanc*/
+    margin: 3px;
+    border-radius: 20px;
+    background-color: transparent;
+    font-size: large;
+    color: black;
+}
+input[type="submit"]{
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 20px;
+    width: 150px;
+    border-style: solid;
+    font-size: large;
+}
+/*mise en forme pour les lien*/
+a{
+    color: black;
+}
+/* mise en forme pour le div*/
+div{
+    color: black;
+    font-size:large;
+    text-align: center;
+}
+label{
+    font-size: x-large;
+}

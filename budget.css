@@ -1,0 +1,50 @@
+/* toute la page*/
+*{
+    margin: 0; /* enlever les marges*/
+    padding: 0; /* enlever les marges*/   
+    font-family: serif; /* la police de la page*/
+    box-sizing: border-box; /* pour que la taille de la page soit la meme*/  
+}
+body{ 
+    background-color:  rgb(120, 120, 121); /* la couleur de fond de la page*/
+    padding: 20px; /* espace autour du contenu */
+}
+/*l'entête de la page*/
+header{
+    background-color: rgb(39, 39, 39); /* la couleur de fond de l'entete*/
+    padding: 30px 20px 30px 20px; /* l'espace entre le texte et le bord de l'entete*/
+    display: flex; /* pour aligner les éléments sur la même ligne */
+    align-items: center; /* centre verticalement les éléments */
+    justify-content: space-between; /* espace entre les éléments */
+}
+/*mise en forme du nav*/
+nav a {
+    color: white; /* couleur du texte */
+    font-style: italic; /* style de la police */
+    font-size: x-large; /* taille de la police */
+    text-decoration: none; /* enlever le soulignement */
+    padding: 5px 10px; /* espace autour du texte */  
+}
+/*misee en forme pour le logo*/
+.logo{
+    font-size: xx-large; /* taille de la police*/
+    font-style: italic; /* style de la police*/
+    color: white; /* couleur du texte*/
+}
+
+
+
+
+
+
+
+
+/* le pied de la page*/
+footer{
+    background-color: rgb(56, 55, 55);
+    text-align: center;
+    color: white;
+    font-size: x-large;
+    font-style: italic;
+    margin-top: 500px; /* espace entre le contenu et le pied de page */
+}

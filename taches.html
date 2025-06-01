@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>la gestion de taches</title>
+    <link rel="stylesheet" href="taches.css"> <!-- lien vers le fichier css-->
+
+</head>
+<body>
+    <!--la tête de la page--> 
+    <header class="header">
+        <p class="logo">ToD-All</p>
+        <!--le lien vers les autres pages-->
+        <nav>
+            <a href="accueil.html"> Accueil </a>  
+            <a href="taches.html"><mark>Gestion des Tâches</mark></a>  
+            <a href="budget.html">Gestion du Budget</a>  
+            <a href="contact.html">Contact</a>  
+            <a href="Inscription.html">se déconnecter</a>
+        </nav>
+    </header>
+    <!--le milieu de la page--> 
+    <main>
+        <!--le titre--> 
+        <h1>Optimisez votre gestion des tâches</h1>
+        <p>Des stratégies gagnantes pour une meilleure productivité</p>
+        <!--Formulaire d'ajout de tâche -->
+        <form id="tacheForm">
+            <h2>Ajouter une nouvelle tâche</h2>
+            <!--La ligne 1-->
+            <div class="ligne1">
+                <!--La partie 1--> 
+                <div class="partie1">
+                    <label for="titre">Titre de la tâche</label><br>
+                    <input type="text" id="titre" placeholder="Saisir le titre de la tâche" required>
+                </div>
+                <!--La partie 2-->
+                <div class="partie2">
+                    <label for="categorie">Catégorie</label><br>
+                    <!-- les options-->
+                    <select id="categorie" required>
+                        <option value="">Sélectionner une catégorie</option>
+                        <option value="personnel">Personnel</option>
+                        <option value="travail">Travail</option>
+                        <option value="études">Études</option>
+                        <option value="loisirs">Loisirs</option>
+                        <option value="santé">Santé</option>
+                        <option value="finances">Finances</option>
+                        <option value="ménage">Ménage</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </div>
+            </div>
+            <!--La ligne 2-->
+            <div class="ligne2"><!--la description-->
+                <label for="description">Description</label><br>
+                <textarea id="description" placeholder="Détails de la tâche (optionnel)"></textarea>
+            </div>
+            <!--la ligne  3-->
+            <div class="ligne3">
+                <!--la date et l'heure-->
+                <div class="partie3">
+                    <label for="date">Date d'échéance</label><br>
+                    <input type="date" id="date" required>
+                </div>
+                <!--la partie 5-->
+                <div class="partie4">
+                    <label for="heure">Heure d'échéance </label><br>
+                    <input type="time" id="heure" required>
+                </div>
+            </div>
+            <!--le bouton pour soumettre-->
+            <button type="submit" class="submit" > ➕ Ajouter la tâche</button>
+        </form>
+        <!--les taches-->
+        <h2>Mes Tâches</h2>
+        <p>
+            Voici la liste de toutes vos tâches. Vous pouvez les trier et 
+            les filtrer selon vos besoins.
+        </p>
+        <!-- Zone de recherche et filtres-->
+        <div class="ligne4">
+            <div class="recherche">
+                <input type="text" id="espace-recherche" placeholder="Rechercher une tâche">
+                <button class="bouton-recherche" onclick="recherchetache()"> 🔎 </button>
+            </div>
+            <!-- Zone de filtres avec indicateur mobile et compte des tâches -->
+            <div class="filtre">
+                <button id="toutButton" class="active" onclick="filtrerTaches('tout')">Toutes (<span id="comptetout">0</span>)</button>
+                <button id="faireButton" onclick="filtrerTaches('faire')">À faire (<span id="comptefaire">0</span>)</button>
+                <button id="faitButton" onclick="filtrerTaches('fait')">Terminées (<span id="comptefait">0</span>)</button>
+            </div>
+        </div>
+        <!--le tableau des taches-->
+        <table>
+            <thead>
+                <tr>
+                    <th>Terminée</th>
+                    <th>Titre</th>
+                    <th>Catégorie</th>
+                    <th>Description</th>
+                    <th>Date d'échéance</th>
+                    <th>Heure d'échéance</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <!-- Liste des tâches -->
+            <tbody id="listeTaches">
+                <!-- Les tâches seront ajoutées ici dynamiquement -->
+            </tbody>
+        </table> 
+    <!--le pied de la page--> 
+    <footer>
+        @2025 - Fièrement construit par Esther Civava 
+    </footer>
+    <script src="taches.js"></script> <!-- lien vers le fichier js-->
+</body>
+</html>

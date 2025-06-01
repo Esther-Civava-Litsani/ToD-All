@@ -1,0 +1,206 @@
+/* toute la page*/
+*{
+    margin: 0; /* enlever les marges*/
+    padding: 0; /* enlever les marges*/   
+    font-family: serif; /* la police de la page*/
+    box-sizing: border-box; /* pour que la taille de la page soit la meme*/  
+}
+body{ 
+    background-color:  rgb(120, 120, 121); /* la couleur de fond de la page*/
+    padding: 20px; /* espace autour du contenu */
+}
+/*l'entête de la page*/
+header{
+    background-color: rgb(39, 39, 39); /* la couleur de fond de l'entete*/
+    padding: 30px 20px 30px 20px; /* l'espace entre le texte et le bord de l'entete*/
+    display: flex; /* pour aligner les éléments sur la même ligne */
+    align-items: center; /* centre verticalement les éléments */
+    justify-content: space-between; /* espace entre les éléments */
+}
+/*mise en forme du nav*/
+nav a {
+    color: white; /* couleur du texte */
+    font-style: italic; /* style de la police */
+    font-size: x-large; /* taille de la police */
+    text-decoration: none; /* enlever le soulignement */
+    padding: 5px 10px; /* espace autour du texte */  
+}
+/*misee en forme pour le logo*/
+.logo{
+    font-size: xx-large; /* taille de la police*/
+    font-style: italic; /* style de la police*/
+    color: white; /* couleur du texte*/
+}
+/*mise en forme pour le titre*/
+h1, h2 {
+    text-align: center;
+    font-size: xx-large;
+}
+/*mise en forme du paragraphe*/
+p{
+    font-size: x-large;
+    text-align: center;
+    margin-bottom: 50px; /* espace entre le paragraphe et le formulaire */
+}
+/* le mise en forme de la partie formulaire*/
+form{
+    max-width: 900px; 
+    padding: 20px; /* espace autour du contenu */
+    margin: auto; /* centre le formulaire sur la page */
+    border-radius: 10px; /* coins arrondis */
+    background-color:  rgb(163, 164, 165); /* fond gris clair */
+    margin-bottom: 50px; /* espace entre le formulaire et la liste */
+}
+/* le mise en forme de ligne1*/
+.ligne1{
+    display: flex; /* pour aligner les éléments sur la même ligne */
+    align-items: center; /* centre verticalement les éléments */
+    gap: 220px; /* espace entre les éléments */
+    margin: 30px 10px 30px 30px; /* espace entre les lignes */
+}
+/* le mise en forme de la ligne2*/
+.ligne2{
+    align-items: center; /* centre verticalement les éléments */
+    margin: 30px 10px 30px 30px; /* espace entre les lignes */
+}
+/* le mise en forme de la ligne3*/
+.ligne3{
+    display: flex; /* pour aligner les éléments sur la même ligne */
+    align-items: center; /* centre verticalement les éléments */
+    gap: 305px; /* espace entre les éléments */
+    margin: 30px 10px 30px 30px; /* espace entre les lignes */
+}
+/* le mise en forme de la ligne4*/
+.ligne4{
+    display: flex; /* pour aligner les éléments sur la même ligne */
+    align-items: center; /* centre verticalement les éléments */
+    justify-content: space-between; /* espace entre les éléments */
+    background-color: rgb(163, 164, 165); /* fond gris clair */
+    max-width: 1200px; /* largeur maximale de la ligne */
+    margin: auto; /* centre la ligne sur la page */
+    padding: 20px; /* espace autour du contenu */
+    flex-wrap: wrap; /* pour que les éléments s'adaptent à la largeur de la ligne */
+    border-radius: 10px; /* coins arrondis */
+    margin-bottom: 30px; /* espace entre la ligne et la liste */
+}
+/* le mise en forme de la partie recherche*/
+.recherche{
+    display: flex; /* pour aligner les éléments sur la même ligne */
+    border: 1px solid; /* bordure autour de la zone de recherche */
+    border-radius: 20px; /* coins arrondis */
+    overflow: hidden; /* pour que le contenu ne dépasse pas la zone de recherche */
+    width: 300px; /* largeur de la zone de recherche */
+}
+#espace-recherche{
+    border: none; /* enlever la bordure */
+    outline: none; /* enlever le contour */
+}
+/* le mise en forme de label*/
+label{
+    font-size: x-large; /* taille de la police */
+}
+/* le mise en forme des imput*/
+input[type="text"], input[type="date"], input[type="time"], textarea, select{
+    padding: 10px; /* espace autour du texte */
+    border: 1px solid black; /* bordure grise */
+    border-radius: 20px; /* coins arrondis */
+    background-color: transparent; /* fond transparent */
+    font-size: large; /* taille de la police */
+    color: black;
+}
+input::placeholder, textarea::placeholder {
+    color: rgb(114, 114, 114); /* exemple de couleur */
+    font-size: large;
+}
+textarea{
+    width: 95%; /* largeur de la zone de texte */
+    height: 50px; /* hauteur de la zone de texte */
+}
+/* le mise en forme du bouton*/
+button{
+    cursor: pointer; /* curseur en main au survol */
+}
+/*mise en forme du bouton submit pour ajouter une tâche*/
+.submit{
+    background-color:  rgb(74, 113, 158);
+    font-size: large; /* taille de la police */ 
+    padding: 10px 20px; /* espace autour du texte */
+    color: black; /* couleur du texte */ 
+    border-radius: 100px; /* coins arrondis */
+    border: solid; /* bordure autour du bouton */
+    display: block; /* pour que le bouton prenne toute la largeur de la ligne */
+    margin: 20px auto; /* centre le bouton */
+}
+/* mise en forme du bouton pour rechercher une tâche */
+.bouton-recherche{
+    background-color: transparent; /* couleur de fond */
+    border: none; /* enlever la bordure */
+    cursor: pointer; /* curseur en main au survol */
+    font-size: large; /* taille de la police */ 
+    transition: background-color 0.3s; /* effet de transition */
+}
+/* mise en forme des boutons modifier et supprimer */
+.bouton-modifier, .bouton-supprimer{
+    background-color: transparent; /* couleur de fond */
+    border: none;
+    cursor: pointer; 
+    font-size: large; 
+    padding: 10px 15px;
+    transition: background-color 0.3s; 
+}
+button:focus, input:focus, select:focus, textarea:focus {
+    outline: 2px solid #010327;
+    outline-offset: 1px;
+}
+/* Style pour le filtre */
+.filtre {
+    display: flex; /* pour aligner les éléments sur la même ligne */
+    border: 1px solid; /* bordure autour de la zone de filtre */
+    border-radius: 20px; /* coins arrondis */
+
+    overflow: hidden; /* pour que le contenu ne dépasse pas la zone de filtre */
+}
+.filtre button {
+    font-size: large; /* taille de la police */
+    padding: 15px; /* espace autour du texte */
+    border: none; /* enlever la bordure */
+    background-color: transparent; /* fond transparent */
+    transition: background-color 0.3s; /* effet de transition */
+}
+/* Style pour le bouton actif */
+.filtre .active {
+    background-color: #4186ad; /* couleur de fond du bouton actif */
+    color: white; /* couleur du texte actif */
+}
+/*la mise en forme pour la liste*/
+table{
+    max-width: 1200px; /* largeur maximale de la table */
+    margin: auto; /* centre la table sur la page */
+    width: 100%; /* largeur de la table */
+    border-collapse: collapse; /* pour que les bordures soient collées */
+    align-items: center; /* centre verticalement les éléments */
+    padding: 20px; /* espace autour du contenu */
+    margin-top: 20px; /* espace entre la table et le formulaire */
+}
+th, td{
+    padding: 10px; /* espace autour du texte */
+    text-align: left; /* alignement du texte à gauche */
+    border-bottom: 1px solid; /* bordure en bas des cellules */
+    font-size: large; /* taille de la police */
+}
+.fait{
+    text-decoration: line-through; /* barre au milieu du texte */
+    color: rgb(56, 55, 55); /* couleur du texte */
+    font-style: italic; /* style de la police */  
+}
+/* le pied de la page*/
+footer{
+    background-color: rgb(56, 55, 55);
+    text-align: center;
+    color: white;
+    font-size: x-large;
+    font-style: italic;
+    margin-top: 500px; /* espace entre le contenu et le pied de page */
+}
+
+
