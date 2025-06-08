@@ -1,32 +1,131 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="fr">
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page d'Inscription</title>
-    <link rel="stylesheet" href="style.css"> <!-- lien vers le fichier css-->
-</head>
-<body>
-    <h1>ToD-All</h1>          
-    <h2>
-        Gérez efficacement vos tâches et votre budget en optimisant 
-        votre productivité avec notre plateforme intuitive.
-    </h2>
-    <main>
-        <!--les informations de l'utilisateur-->    
-        <form>
-            <h2>Inscription</h2>
-            <label for="nom">Entrez votre nom d'utilisateur</label><br>
-                <input  required id="nom" type="text" placeholder="Ex: Esther-Civava " ><br><br>
-            <label for="mot">Choisir un mot de passe</label><br>
-                <input required id= "mot" type="password" placeholder="Entrez votre mot de passe"><br><br>
-            <label for="mot">Confirmez votre mot de passe</label><br>
-                <input required id= "mot" type="password" placeholder="Confirmez votre mot de passe"><br><br>
-                <input type="submit" value="s'inscrire">
-            <div>
-                Vous avez déjà un compte?<a href="connexion.html">Se connecter</a>
-            </div>
-        </form>
-    </main>
-    <p><a href="accueil.html">mami</a></p>
-</body>
+    <link rel="stylesheet" href="style.css"> <!-- lien vers le fichier CSS -->
+    </head>
+    <body>
+        <header>
+            <!-- Le logo de la page d'accueil -->
+            <p class="logo">ToD-All</p>
+            <button><a href="connexion.html" class="bouton">Se connecter</a></button>
+        </header>           
+        <h2>
+            Gérez efficacement vos tâches et votre budget en optimisant 
+            votre productivité avec notre plateforme intuitive.
+        </h2>
+        <main>
+            <!-- Formulaire d'inscription -->
+            <form id="inscriptionForm">
+                <h2>Inscription</h2>
+                <label for="nom">Entrez votre nom d'utilisateur</label>
+                <div class="partie">
+                    <input required id="nom" type="text" placeholder="Ex: Esther-Civava">
+                    <img src="co1.png" alt="pour inscrire le nom">
+                </div>
+                <label for="email">Entrez votre e-mail</label>
+                <div class="partie">
+                    <input required id="email" type="email" placeholder="Ex: esthercivava05@gmail.com">
+                    <img src="email.png" alt="pour l'email">
+                </div>
+                <label for="mot">Choisir un mot de passe</label>
+                <div class="partie">
+                    <input required id="mot" type="password" placeholder="Entrez votre mot de passe">
+                    <img src="Co2.png" alt="pour le mot de passe">
+                </div>
+                <label for="confirm_mot">Confirmez votre mot de passe</label>
+                <div class="partie">
+                    <input required id="confirm_mot" type="password" placeholder="Confirmez votre mot de passe">
+                    <img src="Co3.png" alt="pour le mot de passe">
+                </div>
+                <!-- Zone de message pour afficher la correspondance -->
+                <div id="passwordMessage"></div>
+                <br>
+                <button type="submit">S'inscrire</button>
+            </form>
+        </main>
+    <!-- Script de gestion de l'inscription -->
+        <script>
+            // Fonction pour vérifier en temps réel la correspondance des mots de passe.
+            function checkPasswordMatch() {
+                const password = document.getElementById("mot").value;
+                const confirmPassword = document.getElementById("confirm_mot").value;
+                const messageEl = document.getElementById("passwordMessage");
+                
+                // Si l'utilisateur n'a rien saisi dans le champ de confirmation, aucun message n'est affiché.
+                if (confirmPassword === "") {
+                    messageEl.textContent = "";
+                    return;
+                }
+            
+                if (password === confirmPassword) {
+                    messageEl.style.color = "green";
+                    messageEl.textContent = "Les mots de passe correspondent";
+                } else {
+                    messageEl.style.color = "red";
+                    messageEl.textContent = "Les mots de passe ne correspondent pas";
+                }
+            }
+
+            // Ajout d'écouteurs d'événements pour déclencher la vérification en temps réel
+            document.getElementById("mot").addEventListener("input", checkPasswordMatch);
+            document.getElementById("confirm_mot").addEventListener("input", checkPasswordMatch);
+            
+            // Gestion du formulaire d'inscription
+            document.getElementById("inscriptionForm").addEventListener("submit", function(e) {
+                e.preventDefault();
+            
+                // Récupération des valeurs du formulaire
+                const username = document.getElementById("nom").value.trim();
+                const email = document.getElementById("email").value.trim();
+                const password = document.getElementById("mot").value;
+                const confirmPassword = document.getElementById("confirm_mot").value;
+            
+                // Vérification que tous les champs soient renseignés
+                if (!username || !email || !password || !confirmPassword) {
+                    alert("Tous les champs sont obligatoires.");
+                    return;
+                }
+
+                // Validation basique de l'email
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    alert("Veuillez saisir un email valide.");
+                    return;
+                }
+            
+                // Vérification de la correspondance des mots de passe avant soumission
+                if (password !== confirmPassword) {
+                    alert("Les mots de passe ne correspondent pas.");
+                    return;
+                }
+            
+                // Vérification qu'un utilisateur n'existe pas déjà avec cet email
+                if (localStorage.getItem("user_" + email)) {
+                    alert("Cet utilisateur est déjà enregistré. Veuillez vous connecter.");
+                    return;
+                }
+            
+                // Création de l'objet utilisateur
+                const user = {
+                    username: username,
+                    email: email,
+                    password: password,  // En production, pensez à stocker un mot de passe haché !
+                    tasks: [],
+                    budgets: []  // Pour stocker les dépenses
+                };
+            
+                // Sauvegarder l'utilisateur dans le localStorage
+                localStorage.setItem("user_" + email, JSON.stringify(user));
+                
+                // Enregistrer l'utilisateur courant en session
+                localStorage.setItem("currentUser", email);
+
+                // Redirection vers la page d'accueil après une inscription réussie
+                window.location.href = "accueil.html";
+            });
+        </script>
+    </body>
+</html>
