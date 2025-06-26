@@ -1,0 +1,569 @@
+/*-==================================================POUR TOUTE LA PAGE==================================================*/
+*{
+    margin: 0; /* enlever les marges */
+    padding: 0; /* enlever les marges */
+    font-family: serif; /* la police de la page */
+    box-sizing: border-box; /* pour que la taille de la page soit la même */
+}
+body{
+    padding: 10px; /* espace autour du contenu principal */
+}
+
+/*-==================================================POUR LES EN-TÊTES ET LE PIED DE PAGE==================================================*/
+
+header{
+    background-color: rgb(40, 40, 40); /* la couleur de fond de l'entête */
+    padding: 40px 30px 40px 30px; /* l'espace entre le texte et le bord de l'entête */
+    display: flex; /* pour aligner les éléments sur la même ligne */
+    justify-content: space-between; /* espace entre les éléments */
+    align-items: center; /* centrer les éléments verticalement */
+}
+/* mise en forme du nav */
+nav a {
+    color: white; /* la couleur du texte des liens */
+    text-decoration: none; /* enlever le soulignement des liens */
+    font-style: italic; /* style de la police des liens */
+    font-size: x-large; /* taille de la police des liens */
+    padding: 10px; /* l'espace autour du texte des liens */ 
+}
+a:hover {
+    background-color: rgb(120, 175, 185); /* couleur de fond au survol des liens */
+    border-radius: 20px; /* coins arrondis au survol des liens */
+    color: black; /* couleur du texte au survol des liens */
+}
+
+.bt{
+    padding: 10px;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #4186ad;
+}
+.bt:hover{
+    background-color: #2d4e7f;
+    color: #4186ad;
+}
+
+
+/*-==================================================LES SECTIONS DE LA PAGE==================================================*/
+
+#accueil{
+    background-color:  rgb(155, 194, 226);
+    border-bottom-left-radius: 20px; /*Pour courber les coins de la premiere partie*/
+    border-bottom-right-radius: 20px; /*Pour courber les coins de la premiere partie*/
+    border: 1px solid rgb(30, 30, 30); /* bord de la section */
+    margin-bottom: 20px; /* l'espace entre les sections */
+}
+#taches, #budget{
+    background-color: rgb(155, 194, 226); /* la couleur de fond des sections */
+    border: 1px solid rgb(30, 30, 30); /* bord des sections */
+    border-radius: 20px; /* coins arrondis des sections */
+    margin-bottom: 20px; /* l'espace entre les sections */
+    padding: 20px; /* l'espace entre le texte et le bord des sections */
+}
+#contact{
+    background-color:  rgb(155, 194, 226);
+    border-top-left-radius: 20px; /*Pour courber les coins de la premiere partie*/
+    border-top-right-radius: 20px; /*Pour courber les coins de la premiere partie*/
+    border: 1px solid rgb(30, 30, 30); /* bord de la section */
+    margin-top: 20px; /* l'espace entre les sections */
+}
+
+/*-==================================================POUR LE TITRE, PARAGRAPHE, LE TEXTE  ET LOGO==================================================*/
+
+h1{
+    font-size: 50px; /* taille de la police du titre */
+    text-align: center; /* aligner le texte du titre au centre */
+    color: rgb(30, 30, 30); /* couleur du texte du titre */
+    margin-top: 20px; /* l'espace entre le titre et le bord supérieur de la page */
+}
+h2{
+    font-size: 40px; /* taille de la police du sous-titre */
+    font-style: italic; /* style de la police du sous-titre */
+    text-align: center; /* aligner le texte du sous-titre au centre */
+    color: rgb(30, 30, 30); /* couleur du texte du sous-titre */
+}
+h3{
+    font-size: 35px; /* taille de la police du sous-titre */
+    font-style: italic; /* style de la police du sous-titre */
+    color: rgb(30, 30, 30); /* couleur du texte du sous-titre */
+}
+
+/* mise en forme pour le logo */
+h4{
+    font-size: xx-large; /* taille de la police du logo */
+    font-style: italic; /* style de la police du logo */
+    color: white; /* couleur du texte du logo */
+}
+/* mise en forme pour le paragraphe et texte */
+.text{
+    font-size: 25px; /* taille de la police du paragraphe */
+    text-align: justify; /* aligner le texte du paragraphe */
+}
+.para{
+    text-align: center; /* centrer le texte du paragraphe */
+    margin-bottom: 50px;
+    font-size: 25px; /* taille de la police du paragraphe */
+}
+
+/*-==================================================POUR TOUT LE BOUTONS==================================================*/
+
+#accueil button, #budget button, #contact button, .bouton-modifier, .submit {
+    background-color: #4186ad; /* Bleu */
+    color: white; /* couleur du texte du bouton */
+    border-radius: 10px; /* coins arrondis du bouton */
+    padding: 8px 16px; /* l'espace autour du texte du bouton */
+    margin-top: 10px; /* l'espace entre le bouton et le bord supérieur */
+    font-size: large; /* taille de la police du bouton */
+    cursor: pointer; /* curseur en forme de main au survol */
+    transition: background 0.2s; /* transition pour le changement de couleur de fond */
+}
+#accueil button:hover a, #accueil button:hover, #budget button:hover, #contact button:hover, .bouton-modifier:hover, .submit:hover {
+    background-color: #2d4e7f; /* Bleu foncé au survol */
+}
+
+.bouton-supprimer {
+    background-color: #e74c3c; /* Rouge */
+    color: white; /* couleur du texte du bouton */
+    margin-top: 10px; /* l'espace entre le bouton et le bord supérieur */
+    border-radius: 10px; /* coins arrondis du bouton */
+    padding: 8px 16px; /* l'espace autour du texte du bouton */
+    font-size: large; /* taille de la police du bouton */
+    cursor: pointer; /* curseur en forme de main au survol */
+    transition: background 0.2s; /* transition pour le changement de couleur de fond */
+}
+.bouton-supprimer:hover {
+    background-color: #b93222; /* Rouge foncé au survol */
+}
+#accueil button a{
+    text-decoration: none; /* enlever le soulignement du texte du bouton */
+    color: white; /* couleur du texte du bouton */
+}
+
+/*-==================================================POUR LE BOUTON DE RECHERCHE ET LE FOCUS DES ÉLÉMENTS DE LA TACHE==================================================*/
+
+/* Mise en forme de l'élément avec l'ID 'espace-recherche' */
+#espace-recherche, .bouton-recherche {
+    border: none; /* Supprime la bordure de cet élément */
+    outline: none; /* Supprime le contour lors du focus */
+    padding: 10px; /* Ajoute un padding interne pour l'élément */
+    background-color: transparent; /* Rend le fond de l'élément transparent */
+    cursor: pointer; /* Change le curseur en pointeur pour indiquer que c'est cliquable */
+}
+
+/* Mise en forme qui fait que si on lique sur le bouton le border ne s'affiche pas */
+.bouton-recherche:focus {
+    outline: none; /* Supprime le contour lors du focus */
+}
+/* Style lors du focus sur les boutons, champs et textarea */
+button:focus, input:focus, select:focus, textarea:focus {
+    outline: 2px solid #010327; /* Ajoute un contour bleu très foncé pour l'accessibilité */
+    outline-offset: 1px; /* Décale légèrement le contour de l'élément focus */
+}
+
+/*-==================================================POUR LE FILTRE ET TRI DE LA PARTIE TACHE==================================================*/
+
+.filtre {
+    display: flex; /* Utilise Flexbox pour aligner les éléments dans la zone de filtre */
+    border: 1px solid; /* Ajoute une bordure solide autour de la zone de filtre */
+    border-radius: 20px; /* Arrondit les coins de la zone de filtre */
+    overflow: hidden; /* Masque tout débordement de contenu dans la zone de filtre */
+
+}
+
+/* Mise en forme des boutons dans la zone de filtre */
+.filtre button {
+    padding: 15px; /* Ajoute un padding interne aux boutons de filtre */
+    border: none; /* Supprime la bordure des boutons de filtre */    
+    font-size: large; /* Définit une taille de police large pour le texte dans la zone de filtre */
+}
+
+/* Style pour le bouton actif dans la zone de filtre */
+.filtre .active {
+    background-color: #4186ad; /* Définit la couleur de fond pour le bouton actif */
+    color: white; /* Définit la couleur du texte en blanc pour le bouton actif */
+}
+
+/*-==================================================POUR TOUTES LES PARTIES DE LA PAGE==================================================*/
+/*-==================================================POUR LES PARTIES L'ACCUEIL==================================================*/
+
+.part1{
+    background-color: rgb(75, 168, 148); /* la couleur de fond de la premiere partie*/
+    border: solid; /* pour le bord de la premiere partie*/
+    border-bottom-left-radius: 20px; /*Pour courber les coins de la premiere partie*/
+    border-bottom-right-radius: 20px; /*Pour courber les coins de la premiere partie*/
+    display: flex; /* mettre sur la meme ligne*/
+    justify-content: space-between; /* mettre le texte et l'image sur la meme ligne*/
+    padding: 30px; /* l'espace entre le texte et le bord de la premiere partie*/
+}
+/* le texte de la premiere partie*/
+.part1 .intro{
+    margin-left: auto; /* pour centrer le div*/
+    margin-right: auto; /* pour centrer le div*/
+    text-align: center; /* alignement du texte au centre*/
+}
+.part1 .intro .para{   
+    text-align: center; /* alignement du texte au centre*/
+    font-size: xx-large; /* taille de la police*/
+}
+/*l'image de la premiere partie*/
+.part1 img{    
+    max-width: 500px; /* la taille de l'image*/
+}
+
+/* le mise en forme dU reste de partie*/
+.part2, .part3, .part4, .part5, .part6, .part7, .part8{
+    display: flex; /* mettre sur la meme ligne*/ 
+    justify-content: center; /* mettre sur la meme ligne*/
+
+}
+/*l'image*/
+.part2 img, .part3 img, .part4 img, .part5 img, .part6 img, .part7 img, .part8 img{
+    max-width: 500px; /* la taille de l'image*/
+}
+/* le texte*/
+.part2 .gestache, .part3 .gesbudget, .part4 .tage, .part5 .plani, .part6 .rapport, .part7 .acces, .part8 .todalliste{
+    width: 50%; /* la taille du texte*/
+    margin-top: 70px; /* l'espace entre le texte et le bord*/
+}
+
+/*-==================================================POUR LES PARTIES DU FORM DE LA TACHE==================================================*/
+
+.ligne1, .ligne3 {
+    display: flex; /* Utilise Flexbox pour aligner les éléments sur une ligne */
+    align-items: center; /* Centre verticalement les éléments de la ligne */
+    justify-content: space-between; /* Distribue l'espace entre les éléments de la ligne */
+    padding: 30px; /* Ajoute du padding à l'intérieur de la ligne */
+}
+.ligne2 {
+    padding: 30px; /* Ajoute du padding à l'intérieur de la ligne */
+}
+/* Mise en forme de la quatrième ligne du formulaire */
+.ligne4 {
+    display: flex; /* Utilise Flexbox pour organiser les éléments sur une ligne */
+    align-items: center; /* Centre verticalement les éléments */
+    justify-content: space-between; /* Distribue l'espace entre les éléments */
+    max-width: 1200px; /* Limite la largeur maximale de la ligne à 1200px */
+    margin-left: auto; /* Centre le formulaire*/
+    margin-right: auto; /* Centre le formulaire*/
+    padding: 30px; /* Ajoute du padding à l'intérieur de la ligne */
+    border: solid;
+    border-radius: 20px; /* Arrondit les coins de la ligne */
+}
+
+/*-==================================================POUR LE FORM==================================================*/
+
+form {
+    max-width: 800px; /* Limite la largeur maximale du formulaire à 900px */
+    padding: 30px; /* Ajoute du padding autour du formulaire */
+    margin-left: auto; /* Centre le formulaire*/
+    margin-right: auto; /* Centre le formulaire*/
+    border-radius: 10px; /* Arrondit les coins du formulaire */
+    border: solid; /* Applique une bordure solide autour du formulaire */
+    margin-bottom: 100px; /* Ajoute une marge en dessous pour espacer la liste */
+    margin-top: 80px; /* Ajoute une marge au-dessus du formulaire */
+}
+/* Mise en forme de la zone de recherche */
+.recherche {
+    display: flex; /* Utilise Flexbox pour aligner les éléments horizontalement */
+    border: 1px solid; /* Ajoute une bordure solide autour de la zone de recherche */
+    border-radius: 20px; /* Arrondit les coins de la zone de recherche */
+    gap: 0px; /* Supprime l'espace entre les éléments */
+}
+/* Mise en forme du label et input */
+label {
+    padding: 10px; /* Ajoute de l'espace autour du texte du label */
+    font-size: x-large; /* Agrandit la taille du texte du label */
+}
+
+/* Mise en forme des champs de saisie et des zones de texte */
+input[type="text"], input[type="date"], input[type="email"], input[type="number"], input[type="time"], textarea, select {
+    padding: 8px; /* Ajoute un padding interne aux champs */
+    border: 1px solid black; /* Applique une bordure noire aux champs */
+    border-radius: 20px; /* Arrondit les coins des champs */
+    background-color: transparent; /* Rend le fond des champs transparent */
+    font-size: large; /* Définit une taille de police large pour le texte saisi */
+    color: black; /* Définit la couleur du texte en noir */
+}
+
+/* Mise en forme des espaces réservés (placeholder) dans les champs et textarea */
+input::placeholder, textarea::placeholder {
+    color: rgb(114, 114, 114); /* Définit la couleur du texte des placeholders */
+    font-size: large; /* Définit une taille de texte large pour les placeholders */
+}
+
+/* Mise en forme spécifique pour le textarea */
+textarea {
+    width: 95%; /* Définit la largeur du textarea à 95% de son conteneur */
+    height: 50px; /* Fixe la hauteur du textarea à 50px */
+}
+
+/*-==================================================POUR TOUT LE TABLEAU==================================================*/
+
+table {
+    max-width: 1200px; /* Limite la largeur maximale de la table à 1200px */
+    margin: auto; /* Centre la table horizontalement sur la page */
+    width: 100%; /* La table occupe 100% de la largeur disponible */
+    border-collapse: collapse; /* Fusionne les bordures adjacentes de la table */
+    align-items: center; /* Centre verticalement les contenus dans la table */
+    padding: 20px; /* Ajoute un padding autour de la table */
+    margin-top: 20px; /* Ajoute une marge au-dessus de la table */
+    margin-bottom: 200px; /* Ajoute une marge en dessous de la table pour espacer des autres éléments */
+}
+
+/* Mise en forme des cellules de la table (th et td) */
+th, td {
+    padding: 10px; /* Ajoute un padding interne aux cellules */
+    text-align: left; /* Aligne le texte à gauche dans les cellules */
+    border-bottom: 1px solid; /* Ajoute une bordure inférieure aux cellules */
+    font-size: x-large; /* Définit une taille de texte large pour le contenu des cellules */
+}
+/* Style pour les tâches marquées comme terminées et les autres boutons */
+.fait {
+    text-decoration: line-through; /* Barre le texte pour indiquer une tâche accomplie */
+    color: rgb(56, 55, 55); /* Couleur sombre pour le texte barré */
+    font-style: italic; /* Italique pour les tâches terminées */
+    background-color: transparent; /* Fond transparent pour les tâches terminées */
+}
+
+
+
+
+
+
+/*-==================================================POUR LES RESULTAT DE LA PARTIE BUD==================================================*/
+/* zone de resultat pour le budget */
+
+
+
+#resultat {
+    max-width: 1000px; /* largeur maximale de la zone de résultat */
+    margin: auto; /* centre la zone de résultat sur la page */
+    padding: 20px; /* espace autour du contenu */
+    border: solid;
+    border-radius: 10px; /* coins arrondis de la zone de résultat */
+    font-size: 1.5em; /* taille du texte dans la zone de résultat */
+    margin-top: 100px; /* espace au dessus de la zone de résultat */
+}
+
+
+
+/* la partie contact */
+
+
+.question {
+    padding: 30px;
+}
+.question .text {
+    display: none;
+}
+/* Ajoute un joli cadre pour les réponses de la FAQ */
+#cadre {
+    max-width: 500px;
+    border: 2px solid #4186ad;
+    border-radius: 15px;
+    background: #b6dcec;
+    padding: 20px;
+    margin: 10px 0 20px 0;
+    font-size: x-large;
+}
+
+
+
+
+
+
+/* le pied de la page */
+
+
+
+
+footer {
+    background-color: rgb(40, 40, 40); /* la couleur de fond de l'entête */
+    padding: 40px 30px 40px 30px; /* l'espace entre le texte et le bord de l'entête */
+}
+.footer-content {
+    display: flex; /* pour aligner les éléments sur la même ligne */
+    justify-content: space-between; /* espace entre les éléments */
+    align-items: center; /* centrer les éléments verticalement */
+}
+
+.footer-text {
+    color: white; /* couleur du texte */
+    font-size: 30px; /* taille du texte */
+    text-align: center; /* alignement du texte au centre */
+    font-style: italic; /* style de la police */
+    margin-top: 200px; /* espace au dessus du texte */
+}
+
+
+
+/* Menu hamburger */
+#header-menu, #footer-menu  {
+    display: none; /* Masque le bouton hamburger par défaut */
+    background: none; /* Pas de fond */ 
+    border: none; /* Pas de bordure */
+    font-size: 50px; /* Taille de la police */
+    color: white; /* Couleur du texte */    
+    outline: none; /* Pas de contour */
+    cursor: pointer; /* Curseur en forme de main */
+}
+
+.carte-tache {
+    background: #eaf6fb;
+    border: 2px solid #4186ad;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(65,134,173,0.08);
+    padding: 20px;
+    margin: 20px auto;
+    width: 300px;
+    max-width: 90vw;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.carte-tache .actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+/* Hors media query : style de la carte budget */
+.carte-budget {
+    background: #f8fbe9;
+    border: 2px solid #7bb661;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(123,182,97,0.08);
+    padding: 20px;
+    margin: 10px auto;
+    width: 300px;
+    max-width: 90vw;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.carte-budget .actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+@media (max-width: 900px){
+    /* Header et footer */
+    section{
+        padding:  0 20px 0 20px; /* Enlève le padding du body pour les petits écrans */
+    }
+
+    #header-nav, #footer-nav {
+        flex-direction: column; /* Aligne les éléments du menu en colonne */
+        width: 80%; /* Prend toute la largeur de l'écran */
+        display: none; /* Masque le menu par défaut */
+    }
+    /* Affiche le menu lorsque le bouton hamburger est cliqué */
+    #header-nav.show, #footer-nav.show {
+        display: flex; /* Affiche le menu */
+    }
+    #header-nav a, #footer-nav a {
+        padding: 5px; /* Espace autour des liens */
+        border-bottom: 1px solid #4186ad; /* Bordure en bas des liens */
+        width: 70%; /* Largeur des liens */
+    }
+    #header-menu, #footer-menu {
+        display: block; /* Affiche le bouton hamburger */
+    }
+    /* Mise en forme des titres et paragraphes */
+    h1{
+        font-size: 30px; /* Taille du titre principale */
+    }
+    h2{
+        font-size: 30px; /* Taille du sous-titre */
+    }
+    h3{
+        font-size: 25px; /* Taille du sous-titre */
+        text-align: center; /* Centre le texte des titres */
+    }
+    .para{
+        font-size: 20px; /* Taille du texte des paragraphes */
+        text-align: center; /* Centre le texte des paragraphes */
+        margin-bottom: 0px; /* Espace en dessous des paragraphes */
+    }
+    .text{
+        font-size: 20px; /* Taille du texte des paragraphes */
+        text-align: justify;
+        margin-bottom: 20px; /* Espace en dessous des paragraphes */
+    }
+    /* Mise en forme des parties de l'accueil */
+    .part1, .part2 , .part3, .part4, .part5, .part6, .part7, .part8 {
+        flex-direction: column; /* Aligne les éléments de la première partie en colonne */
+    }
+    /* le texte*/
+    .part2 .gestache, .part3 .gesbudget, .part4 .tage, .part5 .plani, .part6 .rapport, .part7 .acces, .part8 .todalliste{
+        width: 90%; /* la taille du texte*/
+        margin: auto;
+    }
+    /* l'image*/
+    .part2 img, .part3 img, .part4 img, .part5 img, .part6 img, .part7 img, .part8 img{
+        max-width: 400px; /* la taille de l'image*/
+    }
+    .ligne1, .ligne3, .ligne4 { 
+        display: flex;
+        flex-direction: column; /* empile les éléments verticalement */
+        gap: 15px;              /* espace entre les éléments */
+    }
+
+
+
+    table, thead, tbody, tr, th, td {
+        display: none !important;
+    }
+    #cartes-taches {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .carte-tache {
+        background: #eaf6fb;
+        border: 2px solid #4186ad;
+        border-radius: 15px;
+        box-shadow: 0 2px 8px rgba(65,134,173,0.08);
+        padding: 20px;
+        margin: 10px auto;
+        width: 300px;
+        max-width: 90vw;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .carte-tache .actions {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+    }
+    #table, #table thead, #table tbody, #table tr, #table th, #table td {
+        display: none !important;
+    }
+    #cartes-budget {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+}
+
+/* Affichage normal sur grand écran */
+@media (min-width: 901px) {
+    #header-nav,
+    #footer-nav {
+        display: flex !important;
+        flex-direction: row;
+        width: auto;
+        background: none;
+        margin-top: 0;
+    }
+    #header-menu,
+    #footer-menu {
+        display: none;
+    }
+}
